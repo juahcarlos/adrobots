@@ -1,0 +1,41 @@
+services:
+  db:
+    image: postgres:16.4-alpine
+    environment:
+      POSTGRES_USER: adrobot
+      POSTGRES_PASSWORD: adrobot
+      POSTGRES_DB: adrobot
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U adrobot -d adrobot"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    ports:
+      - "5435:5432"
+
+  app:
+    build: .
+    env_file:
+      - .env
+    environment:
+      DATABASE_URL: postgresql+asyncpg://adrobot:adrobot@db:5432/adrobot
+    depends_on:
+      db:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "python -c \"import urllib.request; urllib.request.urlopen('http://localhost:8000/health')\""]
+      interval: 1000s
+      timeout: 5s
+      retries: 10
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000
+    volumes:
+      - ./app:/app/app
+    ports:
+      - "8012:8000"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+volumes:
+  pgdata:

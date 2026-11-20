@@ -1,0 +1,129 @@
+body:has(.nc) {
+  background: #fff;
+}
+
+.nc-wrap {
+  padding: 0;
+  font: 13px Arial, Helvetica, sans-serif;
+  color: #000;
+}
+
+table.nc {
+  width: 289px;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+.nc td {
+  padding: 0;
+  border: 1px solid #d9d9d9;
+  vertical-align: middle;
+}
+
+.nc .sp td {
+  height: 20px;
+}
+
+.nc .head td {
+  height: 20px;
+  padding-left: 3px;
+  font-weight: bold;
+}
+
+.nc td.label {
+  padding-left: 4px;
+  font-size: 14px;
+}
+
+.nc td.field {
+  position: relative;
+  padding: 0;
+}
+
+.nc input,
+.nc select,
+.nc textarea {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0 3px;
+  font: 13px Arial, Helvetica, sans-serif;
+  color: #000;
+  background: #fff;
+  border: 1px solid #000;
+  border-radius: 0;
+}
+
+.nc input,
+.nc select {
+  height: 22px;
+}
+
+.nc textarea {
+  height: 38px;
+  padding-top: 2px;
+  resize: none;
+}
+
+.nc button {
+  box-sizing: border-box;
+  width: 100%;
+  height: 22px;
+  padding: 0;
+  font: bold 14px Arial, Helvetica, sans-serif;
+  color: #000;
+  background: #c6d8f5;
+  border: 1px solid #aebed8;
+  border-radius: 0;
+  cursor: pointer;
+}
+
+.nc button:disabled {
+  color: #777;
+  cursor: default;
+}
+
+.nc .hints {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  max-height: 160px;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+  list-style: none;
+  background: #fff;
+  border: 1px solid #d9d9d9;
+}
+
+.nc .hints li {
+  padding: 4px 6px;
+  cursor: pointer;
+}
+
+.nc .hints li:hover {
+  background: #f0f0f0;
+}
+
+.nc-msg {
+  width: 289px;
+  margin: 10px 0 0 19px;
+  font: 13px Arial, Helvetica, sans-serif;
+}
+
+.nc-msg .error {
+  color: #b00020;
+}
+
+.nc-msg a.open-editor {
+  display: inline-block;
+  margin-top: 4px;
+  padding: 3px 10px;
+  color: #000;
+  background: #c6d8f5;
+  border: 1px solid #aebed8;
+  border-radius: 0;
+}

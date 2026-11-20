@@ -1,0 +1,212 @@
+body:has(.editor) {
+  background: #fff;
+}
+
+.editor {
+  box-sizing: border-box;
+  min-height: 100vh;
+  padding: 10px 6px;
+  font: 13px Arial, Helvetica, sans-serif;
+  color: #222;
+  background: #fff;
+}
+
+.crumbs {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  height: 24px;
+  margin-bottom: 19px;
+  font-size: 13px;
+}
+
+.crumbs a {
+  color: #2a6ebb;
+  text-decoration: none;
+}
+
+.crumbs .sep {
+  color: #777;
+}
+
+.toolbar {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+  margin-bottom: 18px;
+}
+.editor button,
+.editor a.btn {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  height: 28px;
+  padding: 0 10px;
+  font: 12px Arial, Helvetica, sans-serif;
+  color: #222;
+  text-decoration: none;
+  background: #eee;
+  border: 1px solid #bbb;
+  border-radius: 2px;
+  box-shadow: inset 1px 1px 0 #fff;
+  cursor: pointer;
+}
+
+.editor button:disabled {
+  color: #999;
+  cursor: default;
+}
+
+.toolbar button,
+.toolbar a.btn {
+  height: 36px;
+  padding: 0 16px;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.error {
+  color: #b00020;
+}
+
+table.streams {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  font-size: 13px;
+  background: #fff;
+}
+
+.streams th,
+.streams td {
+  padding: 4px 6px;
+  text-align: left;
+  vertical-align: top;
+  border: 1px solid #d9d9d9;
+  overflow-wrap: anywhere;
+}
+
+.streams th {
+  height: 34px;
+  font-weight: bold;
+  vertical-align: middle;
+  background: #fff;
+}
+
+.streams tr.sub td {
+  height: 24px;
+  background: #eee;
+}
+
+.streams tr.group td {
+  height: 33px;
+  padding: 6px;
+  font-size: 12px;
+  vertical-align: middle;
+  background: #eee;
+}
+
+.streams .meta {
+  color: #777;
+}
+
+.streams .group-actions {
+  margin-left: 10px;
+  display: inline-flex;
+  gap: 4px;
+  vertical-align: middle;
+}
+
+.streams .group-actions button {
+  height: 24px;
+}
+
+.streams tbody.changed td {
+  background: #fff8d6;
+}
+
+.streams tr.offer td {
+  height: 120px;
+}
+
+.streams td.name {
+  line-height: 1.5;
+}
+
+.streams td.actions {
+  text-align: right;
+}
+
+.streams tr.removed {
+  color: #999;
+  background: #f3f3f3;
+}
+
+.streams td.empty {
+  color: #777;
+}
+
+.streams td.add-cell {
+  height: 58px;
+  padding: 0 4px;
+  vertical-align: middle;
+}
+
+.add-row {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+}
+
+.add-field {
+  position: relative;
+  width: 267px;
+  max-width: 100%;
+}
+
+.add-field input {
+  box-sizing: border-box;
+  width: 100%;
+  height: 26px;
+  font: 13px Arial, Helvetica, sans-serif;
+}
+
+.editor .pin {
+  height: auto;
+  padding: 0 4px;
+  background: none;
+  border: none;
+  box-shadow: none;
+  opacity: 0.35;
+}
+
+.editor .pin.on {
+  opacity: 1;
+}
+
+.hints {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #d9d9d9;
+  background: #fff;
+  max-height: 160px;
+  overflow: auto;
+}
+
+.add-field .hints {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 5;
+}
+
+.hints li {
+  padding: 6px 8px;
+  cursor: pointer;
+}
+
+.hints li:hover {
+  background: #f0f0f0;
+}
